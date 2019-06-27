@@ -10,7 +10,7 @@ Plugin URI: https://github.com/dhmm
 Description: Payment gateway for woocommerce where we can use MasterPass payment option via AplhaBank
 Version: 1.0
 Author: Nteli Chasan Moustafa Moutlou
-Author URL: https://github.com/dhmm/masterpassalpha
+Author URL: https://github.com/dhmm/masterpassalphabank
 */
 
 /*
