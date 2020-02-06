@@ -75,7 +75,12 @@ class WC_MasterPass_AlphaBank extends WC_Payment_gateway {
 			'orderid'     => $uniqid . 'AlphaBankOrder' .  ( ( WC()->version >= '3.0.0' ) ? $order->get_id() : $order->id ),
 			'orderDesc'   => 'Name: ' . $order->get_formatted_billing_full_name() . ' Address: ' . implode(",", $address) ,
 			'orderAmount' => wc_format_decimal($order->get_total(), 2, false),
-			'currency'    => 'EUR',
+            'currency'    => 'EUR',
+            'billCountry' => 'GR', //Get bill country
+            'billState' => '', //Get bill state
+            'billZip' => '', //Get bill zip
+            'billCity' => '', //Get bill city
+            'billAddress' => '' , //Get bill address
       'payerEmail'  => ( WC()->version >= '3.0.0' ) ? $order->get_billing_email() : $order->billing_email ,
       'payMethod'   => 'auto:MasterPass'
 		);
