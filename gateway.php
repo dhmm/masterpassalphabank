@@ -76,12 +76,12 @@ class WC_MasterPass_AlphaBank extends WC_Payment_gateway {
 			'orderDesc'   => 'Name: ' . $order->get_formatted_billing_full_name() . ' Address: ' . implode(",", $address) ,
 			'orderAmount' => wc_format_decimal($order->get_total(), 2, false),
             'currency'    => 'EUR',
+            'payerEmail'  => ( WC()->version >= '3.0.0' ) ? $order->get_billing_email() : $order->billing_email ,
             'billCountry' => 'GR', //Get bill country
-            'billState' => '', //Get bill state
-            'billZip' => '', //Get bill zip
-            'billCity' => '', //Get bill city
-            'billAddress' => '' , //Get bill address
-      'payerEmail'  => ( WC()->version >= '3.0.0' ) ? $order->get_billing_email() : $order->billing_email ,
+            'billState' => ' ', //Get bill state
+            'billZip' => ' ', //Get bill zip
+            'billCity' => ' ', //Get bill city
+            'billAddress' => ' ' , //Get bill address      
       'payMethod'   => 'auto:MasterPass'
 		);
 		
@@ -186,8 +186,7 @@ class WC_MasterPass_AlphaBank extends WC_Payment_gateway {
 		$html_form_fields = array();
 		foreach ($form_data as $key => $value) {
 			$html_form_fields[] = '<input type="hidden" name="'.esc_attr( $key ).'" value="'.esc_attr($value).'" />';
-		}
-		
+		}        
 		?>
 
 		<?php if ( $this->autosubmitPaymentForm ) :?>
